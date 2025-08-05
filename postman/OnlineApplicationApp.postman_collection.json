@@ -1,0 +1,1285 @@
+{
+	"info": {
+		"_postman_id": "65559443-5d79-49d4-abfa-572a335281fc",
+		"name": "OnlineApplicationApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37451069"
+	},
+	"item": [
+		{
+			"name": "Wish-List-Api's",
+			"item": [
+				{
+					"name": "addToWishList",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\":1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/wish-list/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wish-list",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "move-to-cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInVzZXJJZCI6MTAsInN1YiI6IlN1cmFqIiwiaWF0IjoxNzQ5NzI3Njg5LCJleHAiOjE3NDk3Mjk0ODl9.O9gNFxKwYrwKI3JqC0mPZ-0TtFQ9ChnDR0iA0y2UUzQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sonu\",\r\n  \"email\": \"sonu@gmail.com\",\r\n  \"username\": \"sonu\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"USER\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/wish-list/move-to-cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wish-list",
+								"move-to-cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "viewMyWishList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sonu\",\r\n  \"email\": \"sonu@gmail.com\",\r\n  \"username\": \"sonu\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"USER\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/wish-list/view",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wish-list",
+								"view"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clear-WishList-Items",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sonu\",\r\n  \"email\": \"sonu@gmail.com\",\r\n  \"username\": \"sonu\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"USER\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/wish-list/clear-Wish-list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wish-list",
+								"clear-Wish-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-single-wishlist-item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInVzZXJJZCI6OCwic3ViIjoiQW5raXQiLCJpYXQiOjE3NDk3MTIyNTIsImV4cCI6MTc0OTcxNDA1Mn0.rUgXLOpkOQi_Zd5PTpfSqcjw8Q8R7vvzz5CtKRyIIsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sonu\",\r\n  \"email\": \"sonu@gmail.com\",\r\n  \"username\": \"sonu\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"USER\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/wish-list/delete?productId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wish-list",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "addToCart",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\":2,\r\n  \"quantity\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cart/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clearCart",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\":2,\r\n  \"productId\":2,\r\n  \"quantity\":20\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cart/clearCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"clearCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-cart-item",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\":2,\r\n  \"productId\":2,\r\n  \"quantity\":20\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cart/delete?productId=2&quantityToRemove=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "2"
+								},
+								{
+									"key": "quantityToRemove",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "viewCart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\":2,\r\n  \"productId\":2,\r\n  \"quantity\":20\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cart/viewCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"viewCart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order Api's",
+			"item": [
+				{
+					"name": "webhookFolder",
+					"item": [
+						{
+							"name": "Webhook-Status-Update-Delivery",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-KEY",
+										"value": "secret-delivery-api-key",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderId\": 96,\r\n    \"newStatus\": \"DELIVERED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/webhook/delivery-status",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"webhook",
+										"delivery-status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Webhook-OrderConfirm-Update",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-KEY",
+										"value": "super-secret-payment-key",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"paymentId\": \"7a4f08b1-3224-4c9b-a750-fb0de48da\",\r\n    \"status\": \"SUCCESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/order/webhook/update-status",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"order",
+										"webhook",
+										"update-status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "complete-cart-order",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/order/create/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"create",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order-return",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": 96,\r\n    \"itemsToReturn\": [\r\n        {\r\n            \"productId\": 1,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/order/return",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"return"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buy-now order",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\":1,\r\n  \"quantity\":5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/order/buy-now",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"buy-now"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orderHistory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\":1,\r\n  \"quantity\":2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/order/history",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelOrder",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/order/orderCancel/89",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"orderCancel",
+								"89"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OrderStatusUpdate",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"newOrderStatus\": \"SHIPPED\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/order/statusUpdate/67",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"statusUpdate",
+								"67"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment",
+			"item": [
+				{
+					"name": "initatePayment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInVzZXJJZCI6MjAsInN1YiI6IkFua2l0YSIsImlhdCI6MTc1MzAxMzQ2MiwiZXhwIjoxNzUzMDE1MjYyfQ.PYEm3MYSMJRMVjFf73by7tF_FfaLbkbbSdjPbfV7EFA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": 96,\r\n    \"paymentMode\": \"UPI\",\r\n    \"provider\": \"RAZORPAY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/payment/initiate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"payment",
+								"initiate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "wallet",
+			"item": [
+				{
+					"name": "getWalletBalance",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/wallet/balance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wallet",
+								"balance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-money",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInVzZXJJZCI6NCwic3ViIjoiU2FjaGluIiwiaWF0IjoxNzUwOTI3OTQ3LCJleHAiOjE3NTA5Mjk3NDd9.jUQNDRXGsowQAmP3m5UM4erFK91wtqSiSR5-tM7lVVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\":100\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/wallet/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wallet",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "withDraw-money",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\":100\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/wallet/withDraw",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wallet",
+								"withDraw"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "getCsrfToken",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ankur",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/csrf-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"csrf-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-CSRF-TOKEN",
+						"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Sonu\",\r\n  \"email\": \"sonu@gmail.com\",\r\n  \"username\": \"sonu\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"USER\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Get token from response headers\r",
+							"let authHeader = pm.response.headers.get(\"Authorization\");\r",
+							"\r",
+							"// Check if header is present and starts with Bearer\r",
+							"if (authHeader && authHeader.startsWith(\"Bearer \")) {\r",
+							"    let token = authHeader.replace(\"Bearer \", \"\").trim();\r",
+							"    pm.globals.set(\"jwt_token\", token);  // ✅ Set as global variable\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-CSRF-TOKEN",
+						"value": "4KHBr5A-S6o9kKnmw7ngsnIcyIv5QgL1kRYMP3yEI03ynfUl0ZP4y_MKe5kQp5iE-pTU0UYr5erKcTXYqHM6B0jiG3mQ_sJA",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Ankita\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllProductList",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \" keyboard\",\r\n\"description\": \"wireless keyboard\",\r\n\"price\": 499,\r\n\"quantity\": 25,\r\n\"category\":\"ELECTRONICS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/getAll?page=0&size=12&sortBy=price,id&sortDir=asc&Authorization=Bearer {{jwt_token}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"getAll"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "12"
+						},
+						{
+							"key": "sortBy",
+							"value": "price,id"
+						},
+						{
+							"key": "sortDir",
+							"value": "asc"
+						},
+						{
+							"key": "Authorization",
+							"value": "Bearer {{jwt_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filterByCategory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/filterByCategory?categories=ELECTRONICS&page=0&size=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"filterByCategory"
+					],
+					"query": [
+						{
+							"key": "categories",
+							"value": "ELECTRONICS"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYXJzaDM0NSIsImlhdCI6MTc0ODg0MzU3MiwiZXhwIjoxNzQ4ODQzNjgwfQ.BRBXdUaPLiWirF5M_Rgpkx2ulrZ5VnMFXheBNEn6hLI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"keyboard\",\r\n    \"description\": \"wireless keyboard\",\r\n    \"price\": 75.00,\r\n    \"quantity\": 219,\r\n    \"category\": \"ELECTRONICS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProduct",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "greet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYXJzaDM0NSIsImlhdCI6MTc0ODg0MzM5NiwiZXhwIjoxNzQ4ODQzNTA0fQ.vDxwRKw_VErZwEn1Ggj7bnJJyyef_g5_INxGRUQhikw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/hello/greet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello",
+						"greet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createProduct",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": 999,\r\n    \"name\": \"Mobile\",\r\n    \"description\": \"High speed Mobile\",\r\n    \"quantity\": 20,\r\n    \"category\": \"ELECTRONICS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"let token = pm.globals.get(\"jwt_token\");\r",
+					"if (token) {\r",
+					"    pm.request.headers.add({\r",
+					"        key: \"Authorization\",\r",
+					"        value: `Bearer ${token}`\r",
+					"    });\r",
+					"}\r",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -36,3 +36,8 @@ Update application.properties with  DB credentials
 
 ## Run the App
 ./mvnw spring-boot:run
+
+## postman collection
+you can find the postman collection (./postman/OnlineApplicationApp.postman_collection.json) to test all the APIs.
+- Download the json file 
+- import it into the postman.
