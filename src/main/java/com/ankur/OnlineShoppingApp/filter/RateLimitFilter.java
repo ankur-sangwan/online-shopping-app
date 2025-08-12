@@ -32,7 +32,7 @@ public class RateLimitFilter extends OncePerRequestFilter {
         String key;
 
 
-        if (path.startsWith("/user/login")) {
+        if (path.startsWith("/user/login") || path.startsWith("/user/create") || path.startsWith("/order/webhook/update-status") || path.startsWith("/webhook/delivery-status")) {
         key=request.getRemoteHost();
         }
         else{

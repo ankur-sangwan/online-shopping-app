@@ -1072,6 +1072,41 @@
 			"response": []
 		},
 		{
+			"name": "get-product-byId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \" keyboard\",\r\n\"description\": \"wireless keyboard\",\r\n\"price\": 499,\r\n\"quantity\": 25,\r\n\"category\":\"ELECTRONICS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "filterByCategory",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -1261,11 +1296,25 @@
 				"packages": {},
 				"exec": [
 					"let token = pm.globals.get(\"jwt_token\");\r",
-					"if (token) {\r",
-					"    pm.request.headers.add({\r",
-					"        key: \"Authorization\",\r",
-					"        value: `Bearer ${token}`\r",
-					"    });\r",
+					"let excludedPaths = [\r",
+					"    \"/user/create\",\r",
+					"    \"/user/login\",\r",
+					"    \"/webhook/delivery-status\",\r",
+					"    \"/order/webhook/update-status\"\r",
+					"];\r",
+					"// Get current request path\r",
+					"let requestUrl = pm.request.url.getPath();\r",
+					"// console.log(\"request url is \"+requestUrl);\r",
+					"\r",
+					"\r",
+					"// Check if current path is in excluded list\r",
+					"if (!excludedPaths.includes(requestUrl)) {\r",
+					"    if (token) {\r",
+					"        pm.request.headers.add({\r",
+					"            key: \"Authorization\",\r",
+					"            value: `Bearer ${token}`\r",
+					"        });\r",
+					"    }\r",
 					"}\r",
 					""
 				]
