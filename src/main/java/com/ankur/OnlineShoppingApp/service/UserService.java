@@ -91,8 +91,8 @@ public class UserService {
         // Generate JWT token after successful authentication
         String jwtToken = jwtService.generateToken(loginRequestDto.getUsername());
 
-        // Set JWT token in response header
-        response.setHeader("Authorization", "Bearer " + jwtToken);  // JWT token in Authorization header
+        // Set JWT token in Authorization response header
+        response.setHeader("Authorization", "Bearer " + jwtToken);
 
         Users user = userRepository.findByUsername(loginRequestDto.getUsername()).orElseThrow(() -> new UsernameNotFoundException("loginRequestDto not found"));
         Cart cart = cartRepository.findByUserId(user.getId());

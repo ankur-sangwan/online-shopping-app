@@ -112,6 +112,10 @@
 			<artifactId>resilience4j-spring-boot3</artifactId> <!-- for Spring Boot 3 -->
 			<version>2.1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
 
 
 

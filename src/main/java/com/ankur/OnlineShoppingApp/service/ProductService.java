@@ -7,6 +7,9 @@ import com.ankur.OnlineShoppingApp.repository.ProductRepository;
 import com.ankur.OnlineShoppingApp.resource.ProductRequestDto;
 import com.ankur.OnlineShoppingApp.response.ProductResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
@@ -21,8 +24,6 @@ public class ProductService {
 
     public ProductResponseDto create(ProductRequestDto product) {
         Product productModel = new Product();
-
-
         productModel.setQuantity(product.getQuantity());
         productModel.setName(product.getName());
         productModel.setDescription(product.getDescription());
@@ -40,20 +41,20 @@ public class ProductService {
         productResponseDto.setCategory(saved.getCategory());
 
         return productResponseDto;
-
-
     }
+
+    @CacheEvict(value = "products", key = "#id")
 
     public void delete(int id) {
-        Optional<Product> product=productRepository.findById(id);
-        if(product.isPresent()){
+        Optional<Product> product = productRepository.findById(id);
+        if (product.isPresent()) {
             productRepository.deleteById(id);
-        }
-        else{
-            throw new ProductNotFoundException("product not found with id: "+id);
+        } else {
+            throw new ProductNotFoundException("product not found with id: " + id);
         }
     }
 
+    @CachePut(value = "products", key = "#product.id")
     public ProductResponseDto update(int id, ProductRequestDto productRequestDto) {
         Product existingProduct = productRepository.findById(id)
                 .orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
@@ -76,9 +77,24 @@ public class ProductService {
         responseDto.setQuantity(saved.getQuantity());
         responseDto.setName(saved.getName());
         responseDto.setCategory(saved.getCategory());
-
         return responseDto;
+    }
 
+    @Cacheable(value = "products", key = "#id")
+    public ProductResponseDto getProductById(int id) {
+        System.out.println("Fetching from DB..."); // Proof for cache
+
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
+
+        return new ProductResponseDto(
+                product.getId(),
+                product.getPrice(),
+                product.getName(),
+                product.getDescription(),
+                product.getQuantity(),
+                product.getCategory()
+        );
     }
 
     public Page<ProductResponseDto> getAll(int page, int size, List<String> sortBy, String sortDir) {

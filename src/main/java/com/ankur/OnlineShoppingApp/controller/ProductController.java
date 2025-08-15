@@ -7,6 +7,7 @@ import com.ankur.OnlineShoppingApp.response.ProductResponseDto;
 import com.ankur.OnlineShoppingApp.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +35,6 @@ public class ProductController {
         productService.delete(id);
         return new ResponseEntity<>(new ApiResponse<>("product deleted", null,HttpStatus.OK),HttpStatus.OK);
     }
-
     @PutMapping("/{id}")
     public ResponseEntity<ApiResponse<ProductResponseDto>> update(@PathVariable int id, @RequestBody ProductRequestDto productRequestDto) {
         ProductResponseDto productResponseDto=productService.update(id, productRequestDto);
@@ -48,7 +48,7 @@ public class ProductController {
 
        Page<ProductResponseDto> productResponseDto=productService.getAll(page,size,sortBy,sortDir);
 
-        return new ResponseEntity<>(new ApiResponse<>("product retrived",productResponseDto,HttpStatus.OK),HttpStatus.OK);
+        return new ResponseEntity<>(new ApiResponse<>("product retrieved",productResponseDto,HttpStatus.OK),HttpStatus.OK);
     }
     @GetMapping("/filterByCategory")
     public ResponseEntity<ApiResponse<Page<ProductResponseDto>>> getByCategory(@RequestParam List<ProductCategory> categories,
@@ -57,6 +57,12 @@ public class ProductController {
 
         Page<ProductResponseDto> productResponseDto=productService.getByCategory(categories,page,size);
         return new ResponseEntity<>(new ApiResponse<>("Product retrived",productResponseDto,HttpStatus.OK),HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ApiResponse<ProductResponseDto>> getProductById(@PathVariable int id) {
+        ProductResponseDto productResponseDto=productService.getProductById(id);
+        return new ResponseEntity<>(new ApiResponse<>("Product fetched successfully",productResponseDto,HttpStatus.OK),HttpStatus.OK);
     }
 
 

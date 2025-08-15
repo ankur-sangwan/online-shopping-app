@@ -23,7 +23,6 @@ public class UserController {
 
     @PostMapping("/create")
     public ResponseEntity<UserResponseDto> register(@RequestBody @Valid UserRequestDto user) {
-        System.out.println("hlo, trying to rin register api");
         UserResponseDto userResponse = userService.register(user);
         return new ResponseEntity<>(userResponse, HttpStatus.CREATED);
     }

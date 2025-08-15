@@ -43,7 +43,7 @@ public class Users {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Order> orders = new ArrayList<>();
     @Column(nullable = true)
-    private Integer walletBalance; // object wrapper, int nahi
+    private Integer walletBalance;
 
 
 
